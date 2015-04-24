@@ -1,0 +1,38 @@
+<ion-view view-title="Ralph Moseley">
+    <script id="templates/modal.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar bar-header bar-positive">
+                <h1 class="title">New Contact</h1>
+                <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+            </ion-header-bar>
+            <ion-content class="padding">
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Email</span>
+                        <input ng-model="newUser.email" type="text">
+                    </label>
+                    <button class="button button-full button-positive" ng-click="sendMessage()">Send</button>
+                </div>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-positive" ng-click="sendMessage()"><i class="ion-compose"></i></button>
+    </ion-nav-buttons>
+    <ion-content class="content-stable"
+                 on-swipe-left="hideTime = false"
+                 on-swipe-right="hideTime = true">
+
+        <div ng-repeat="msg in msg_list" class="messages-wrapper">
+                <!--<div class="message to">This is my first text message on ios7 This is my first text message on ios7</div>-->
+                <div class="message positive">{{msg.content}}</div>
+        </div>
+
+        <div ng-if="msg_list.length<0" class="messages-wrapper">
+            <!--<div class="message to">This is my first text message on ios7 This is my first text message on ios7</div>-->
+            <div class="message positive">No messages</div>
+        </div>
+    </ion-content>
+
+    </ion-view>
+

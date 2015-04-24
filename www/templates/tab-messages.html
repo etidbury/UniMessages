@@ -1,0 +1,43 @@
+<ion-view view-title="Unread">
+
+  <ion-nav-buttons side="left">
+   <button class="button button-clear button-positive" onclick="window.open('https://outlook.office365.com/owa/?realm=live.mdx.ac.uk&layout=twide', '_system');">Read Mail</button>
+
+  </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <a href="#/help"><button class="button button-clear button-positive">Help</button></a>
+    </ion-nav-buttons>
+
+  <ion-content>
+    <ion-refresher
+            pulling-text="Check Inbox..."
+            on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="msg in msg_list | orderBy:'-time_sent'" type="item-text-wrap">
+
+          <img ng-if="msg.deadline_mention" src="img/icon/deadline.png" class="base deadline" >
+          <img ng-if="msg.cancelled_mention" src="img/icon/cancelled.png" class="base cancelled" >
+
+        <h2>{{msg.display_name}}</h2>
+        <p>{{msg.subject}}</p>
+        <p class="timestamp">{{msg.time_sent}}</p>
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+        <ion-option-button class="button-stable" ng-click="markAsRead(msg.sender_user_id)">
+          Mark as Read
+        </ion-option-button>
+        <ion-option-button class="button-positive" ng-click="reply(msg.sender_user_id)">
+          Reply
+        </ion-option-button>
+      </ion-item>
+
+
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
+
+

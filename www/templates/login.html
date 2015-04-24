@@ -1,0 +1,37 @@
+<ion-view view-title="Login">
+
+
+    <ion-nav-buttons side="right">
+        <a href="#/help"><button class="button button-clear button-positive">Help</button></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list list-inset">
+
+                <label class="item item-input">
+                    <input type="text" placeholder="e.g. ET403" ng-model="input_id">
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        @
+                    </div>
+                    <select ng-init="input_domain= input_domain || 'live.mdx.ac.uk'" ng-model="input_domain" >
+                        <option value="live.mdx.ac.uk" selected="selected">live.mdx.ac.uk</option>
+                        <option value="mdx.ac.uk">mdx.ac.uk</option>
+                    </select>
+
+                </label>
+
+            <button class="button button-block button-assertive" ng-click="authorize(input_id+'@'+input_domain)" ng-disabled="!input_id||input_id.length<5" disabled="disabled">
+                Login with MDX
+            </button>
+
+        </div>
+
+
+
+
+
+    </ion-content>
+</ion-view>
+

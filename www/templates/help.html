@@ -1,0 +1,45 @@
+<ion-view view-title="Help">
+
+
+
+        <ion-nav-buttons side="right">
+            <button class="button button-clear button-positive" ng-click="goBack()" >Close</button>
+        </ion-nav-buttons>
+
+    <ion-content>
+        <div class="list list-inset">
+            <h2>UniMessages &trade;</h2>
+        <p>
+            This App is to allow you to quickly check read your unread email for important information such as emails mentioning cancelled dates and deadline dates. This app is connected with your University’s email and your mobile device acts as your passport to authorize access and read your mail.
+
+        </p>
+
+            <style>
+                td {
+                    padding:10px;
+                    vertical-align: middle;
+                }
+            </style>
+
+            <table>
+
+                <tr>
+                    <td><img src="img/icon/deadline.png" width="30" ></td>
+                    <td>The email mentions 'deadline'</td>
+                </tr>
+                <tr>
+                    <td><img src="img/icon/cancelled.png" width="30" ></td>
+                    <td>The email mentions 'cancelled'</td>
+                </tr>
+                <tr>
+                    <td><img src="img/icon/cancelled.png" width="20" style="position:relative; float:right; top:10px; right:-10px;" ><img src="img/icon/deadline.png" width="30" ></td>
+                    <td>The email mentions 'deadline' and 'cancelled'</td>
+                </tr>
+
+            </table>
+
+</div>
+
+
+    </ion-content>
+</ion-view>
